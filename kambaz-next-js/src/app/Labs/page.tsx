@@ -16,7 +16,7 @@ export default function LabsLanding() {
 
       <h3>Kambaz</h3>
       <ul>
-        <li><Link href="/">Go to Kambaz Application</Link></li>
+        <li><Link href="/Account/Signin">Go to Kambaz Application</Link></li>
       </ul>
 
       <h3>Source Code</h3>
