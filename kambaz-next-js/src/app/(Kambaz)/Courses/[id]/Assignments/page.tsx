@@ -1,12 +1,28 @@
-export default async function Assignments({ params }: { params: { id: string } }) {
-  const { id } = await params;
+"use client";
 
+import Link from "next/link";
+
+export default function Assignments() {
   return (
     <div id="wd-assignments">
-      <h2>Assignments for Course {id}</h2>
+      <h2>Assignments</h2>
+
+      <div style={{ marginBottom: "1rem" }}>
+        <input
+          type="text"
+          placeholder="Search Assignments"
+          style={{ marginRight: "1rem" }}
+        />
+        <button>+ Assignment</button>
+      </div>
+
       <ul>
-        <li>Assignment 1 - Due May 13</li>
-        <li>Assignment 2 - Due May 20</li>
+        <li>
+          <Link href="./Assignments/Edit">Assignment 1</Link>
+        </li>
+        <li>
+          <Link href="./Assignments/Edit">Assignment 2</Link>
+        </li>
       </ul>
 
       <h3>Quizzes</h3>
