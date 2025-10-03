@@ -1,0 +1,52 @@
+/* Selectors */
+p {
+  color: blue;
+}
+.example-class {
+  color: green;
+}
+#example-id {
+  color: purple;
+  font-weight: bold;
+}
+
+/* Colors & backgrounds */
+.text-red {
+  color: red;
+}
+.bg-yellow {
+  background-color: yellow;
+}
+.bg-image {
+  background-image: url("/images/reactjs.jpg");
+  background-size: cover;
+  color: white;
+  padding: 10px;
+}
+
+/* Borders */
+.border-solid { border: 2px solid black; margin: 4px; padding: 4px; }
+.border-dotted { border: 2px dotted black; margin: 4px; padding: 4px; }
+.border-dashed { border: 2px dashed black; margin: 4px; padding: 4px; }
+.border-double { border: 4px double black; margin: 4px; padding: 4px; }
+.border-groove { border: 4px groove gray; margin: 4px; padding: 4px; }
+.border-ridge { border: 4px ridge gray; margin: 4px; padding: 4px; }
+.border-inset { border: 4px inset gray; margin: 4px; padding: 4px; }
+.border-outset { border: 4px outset gray; margin: 4px; padding: 4px; }
+
+/* Spacing */
+.margin-example {
+  margin: 20px;
+  border: 1px solid black;
+}
+.padding-example {
+  padding: 20px;
+  border: 1px solid black;
+}
+
+/* Rounded corners */
+.rounded {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+}

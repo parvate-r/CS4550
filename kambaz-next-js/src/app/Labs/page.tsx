@@ -11,7 +11,6 @@ export default function LabsLanding() {
         <li><Link href="/Labs/Lab1">Lab 1: HTML</Link></li>
         <li><Link href="/Labs/Lab2">Lab 2: CSS (coming soon)</Link></li>
         <li><Link href="/Labs/Lab3">Lab 3: Bootstrap (coming soon)</Link></li>
-        {/* add more labs as you complete them */}
       </ul>
 
       <h3>Kambaz</h3>
