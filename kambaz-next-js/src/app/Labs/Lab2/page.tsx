@@ -24,6 +24,10 @@ export default function Lab2() {
         <p className="text-red">This text is red.</p>
         <p className="bg-yellow">This text has a yellow background.</p>
         <p className="bg-image">This has a background image.</p>
+        {/* Inline styles example */}
+        <p style={{ color: "purple", backgroundColor: "lightgray", padding: "5px" }}>
+          This paragraph is styled with <strong>inline styles</strong>.
+        </p>
       </section>
 
       <section id="wd-borders">
@@ -47,6 +51,10 @@ export default function Lab2() {
       <section id="wd-rounded">
         <h3>Rounded Corners</h3>
         <div className="rounded">Rounded corners example</div>
+        {/* Inline style for border radius */}
+        <div style={{ border: "2px solid blue", borderRadius: "50%", padding: "20px", width: "100px", textAlign: "center" }}>
+          Inline circle
+        </div>
       </section>
     </div>
   );
