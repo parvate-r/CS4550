@@ -1,6 +1,8 @@
 "use client";
 
-import "./lab2.module.css"; 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import "./lab2.css";
 
 export default function Lab2() {
   return (
