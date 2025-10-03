@@ -9,7 +9,7 @@ export default function LabsLanding() {
       <h3>Lab Assignments</h3>
       <ul>
         <li><Link href="/Labs/Lab1">Lab 1: HTML</Link></li>
-        <li><Link href="/Labs/Lab2">Lab 2: CSS (coming soon)</Link></li>
+        <li><Link href="/Labs/Lab2">Lab 2: CSS</Link></li>
         <li><Link href="/Labs/Lab3">Lab 3: Bootstrap (coming soon)</Link></li>
       </ul>
 
