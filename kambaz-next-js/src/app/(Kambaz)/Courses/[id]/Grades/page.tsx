@@ -1,19 +1,33 @@
-export default function Grades({ params }: { params: { id: string } }) {
+"use client";
+
+export default function CourseGrades() {
+  const grades = [
+    { assignment: "A1: Core HTML", score: 98, total: 100, feedback: "Great job!" },
+    { assignment: "A2: CSS & React", score: 92, total: 100, feedback: "Well done." },
+    { assignment: "Lab: Flex Box", score: 18, total: 20, feedback: "Solid work." }
+  ];
+
   return (
-    <div id="wd-grades">
+    <div className="container mt-4">
       <h2>Grades</h2>
-      <table border={1} width="100%">
-        <thead>
+      <table className="table table-bordered table-hover mt-3">
+        <thead className="table-light">
           <tr>
             <th>Assignment</th>
-            <th>Grade</th>
+            <th>Score</th>
+            <th>Total</th>
+            <th>Feedback</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Assignment 1</td><td>95</td></tr>
-          <tr><td>Assignment 2</td><td>88</td></tr>
-          <tr><td>Quiz 1</td><td>90</td></tr>
-          <tr><td>Midterm Exam</td><td>85</td></tr>
+          {grades.map((g, idx) => (
+            <tr key={idx}>
+              <td>{g.assignment}</td>
+              <td>{g.score}</td>
+              <td>{g.total}</td>
+              <td>{g.feedback}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

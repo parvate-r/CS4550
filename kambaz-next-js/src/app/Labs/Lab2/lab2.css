@@ -1,22 +1,44 @@
-/* Selectors */
+/* Selector Types */
+
+/* Element selector */
 p {
   color: blue;
 }
+
+/* Class selector */
 .example-class {
   color: green;
 }
+
+/* ID selector */
 #example-id {
   color: purple;
   font-weight: bold;
 }
 
-/* Colors & backgrounds */
-.text-red {
-  color: red;
+/* Specific Rubric Color Demos */
+#white-on-red {
+  color: white;
+  background-color: red;
 }
-.bg-yellow {
+#black-on-yellow {
+  color: black;
   background-color: yellow;
 }
+.blue-on-yellow {
+  color: blue;
+  background-color: yellow;
+}
+.blue-on-yellow-heading {
+  color: blue;
+  background-color: yellow;
+}
+
+/* Color & Backgrounds */
+.text-red { color: red; }
+.bg-yellow { background-color: yellow; }
+.bg-blue { background-color: blue; color: white; }
+.bg-green { background-color: green; color: white; }
 .bg-image {
   background-image: url("/images/reactjs.jpg");
   background-size: cover;
@@ -24,7 +46,28 @@ p {
   padding: 10px;
 }
 
-/* Borders */
+/* Borders and Margins */
+.fat-red-border {
+  border: 5px solid red;
+  margin: 4px;
+  padding: 4px;
+}
+.fat-blue-border {
+  border: 5px solid blue;
+  margin: 4px;
+  padding: 4px;
+}
+.fat-yellow-border {
+  border: 5px solid yellow;
+  margin: 4px;
+  padding: 4px;
+}
+.thin-blue-dashed-border {
+  border: 2px dashed blue;
+  margin: 4px;
+  padding: 4px;
+}
+
 .border-solid { border: 2px solid black; margin: 4px; padding: 4px; }
 .border-dotted { border: 2px dotted black; margin: 4px; padding: 4px; }
 .border-dashed { border: 2px dashed black; margin: 4px; padding: 4px; }
@@ -34,19 +77,46 @@ p {
 .border-inset { border: 4px inset gray; margin: 4px; padding: 4px; }
 .border-outset { border: 4px outset gray; margin: 4px; padding: 4px; }
 
-/* Spacing */
+/* Spacing: big padding, margins */
+.big-padding-above-left { padding-top: 40px; padding-left: 40px; }
+.big-padding-bottom { padding-bottom: 40px; }
+.big-padding { padding: 40px; }
+.margin-bottom { margin-bottom: 40px; }
+.centered { margin: 0 auto; }
+.big-margin { margin: 40px; }
 .margin-example {
   margin: 20px;
   border: 1px solid black;
 }
-.padding-example {
-  padding: 20px;
-  border: 1px solid black;
-}
 
-/* Rounded corners */
-.rounded {
-  border: 2px solid black;
-  border-radius: 15px;
-  padding: 10px;
-}
+/* Rounded Corners */
+.rounded { border-radius: 15px; }
+.rounded-top { border-top-left-radius: 20px; border-top-right-radius: 20px; }
+.rounded-bottom { border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+.rounded-left { border-top-left-radius: 20px; border-bottom-left-radius: 20px; }
+.rounded-right { border-top-right-radius: 20px; border-bottom-right-radius: 20px; }
+
+/* Dimensions */
+.tall-yellow { background: yellow; width: 100px; height: 200px; }
+.wide-blue { background: blue; width: 200px; height: 100px; color: white;}
+.square-red { background: red; width: 150px; height: 150px; color: white;}
+
+/* Box Position */
+.relative-nudge { position: relative; top: 20px; left: 20px; background: yellow; }
+.fixed-rect { position: fixed; right: 10px; top: 10px; background: blue; width: 100px; height: 50px; color: white;}
+.absolute-rect { position: absolute; top: 100px; left: 100px; background: pink; width: 75px; height: 100px;}
+.zindex-rect1 { position: absolute; left: 130px; top: 110px; width: 60px; height: 60px; background: orange; z-index: 2;}
+.zindex-rect2 { position: absolute; left: 140px; top: 120px; width: 60px; height: 60px; background: blue; color: white; z-index: 1;}
+.float-right { float: right; background: yellow; width: 120px; height: 60px;}
+.float-left { float: left; background: pink; width: 120px; height: 60px;}
+
+/* Flex/Grid Layout Demos */
+.flex-row { display: flex; flex-direction: row; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-center { display: flex; justify-content: center; align-items: center; }
+.grid-demo { display: grid; grid-template-columns: 1fr 2fr; gap: 12px; }
+
+/* Bootstrap/Responsive Styling (to use with HTML) */
+.bootstrap-container { margin: 20px; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+.table-demo { width: 100%; border-collapse: collapse; }
+.table-demo th, .table-demo td { border: 1px solid #333; padding: 6px; text-align: left; }

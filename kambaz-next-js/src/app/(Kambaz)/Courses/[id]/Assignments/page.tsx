@@ -1,46 +1,33 @@
 "use client";
 
-import Link from "next/link";
+export default function CourseAssignments() {
+  const assignments = [
+    { title: "A1: Core HTML", due: "2025", points: 100 },
+    { title: "A2: CSS & React Basics", due: "2025", points: 100 },
+    { title: "Lab: Flex/Grid CSS", due: "2025", points: 20 }
+  ];
 
-export default function Assignments() {
   return (
-    <div id="wd-assignments">
+    <div className="container mt-4">
       <h2>Assignments</h2>
-
-      <div style={{ marginBottom: "1rem" }}>
-        <input
-          type="text"
-          placeholder="Search Assignments"
-          style={{ marginRight: "1rem" }}
-        />
-        <button>+ Assignment</button>
-      </div>
-
-      <ul>
-        <li>
-          <Link href="./Assignments/Edit">Assignment 1</Link>
-        </li>
-        <li>
-          <Link href="./Assignments/Edit">Assignment 2</Link>
-        </li>
-      </ul>
-
-      <h3>Quizzes</h3>
-      <ul>
-        <li>Quiz 1 - HTML</li>
-        <li>Quiz 2 - CSS</li>
-      </ul>
-
-      <h3>Exams</h3>
-      <ul>
-        <li>Midterm Exam</li>
-        <li>Final Exam</li>
-      </ul>
-
-      <h3>Project</h3>
-      <ul>
-        <li>Final Group Project</li>
-      </ul>
+      <table className="table table-bordered table-hover mt-3">
+        <thead className="table-light">
+          <tr>
+            <th>Title</th>
+            <th>Due Date</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          {assignments.map((a, idx) => (
+            <tr key={idx}>
+              <td>{a.title}</td>
+              <td>{a.due}</td>
+              <td>{a.points}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

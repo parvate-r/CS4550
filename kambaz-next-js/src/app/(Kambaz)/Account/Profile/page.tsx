@@ -1,22 +1,45 @@
-import Link from "next/link";
-
 export default function Profile() {
   return (
-    <div id="wd-profile-screen">
-      <h3>Profile</h3>
-      <input defaultValue="alice" placeholder="username" className="wd-username"/><br/>
-      <input defaultValue="123"   placeholder="password" type="password" className="wd-password" /><br/>
-      <input defaultValue="Alice" placeholder="First Name" id="wd-firstname" /><br/>
-      <input defaultValue="Wonderland" placeholder="Last Name" id="wd-lastname" /><br/>
-      <input defaultValue="2000-01-01" type="date" id="wd-dob" /><br/>
-      <input defaultValue="alice@wonderland" type="email" id="wd-email" /><br/>
-      <select defaultValue="FACULTY" id="wd-role">
-        <option value="USER">User</option>
-        <option value="ADMIN">Admin</option>
-        <option value="FACULTY">Faculty</option>
-        <option value="STUDENT">Student</option>
-      </select><br/>
-      <Link href="Signin" > Sign out </Link>
+    <div className="container mt-4">
+      <h2>Profile – Rudra Parvate</h2>
+      <form>
+        <div className="mb-3">
+          <label htmlFor="profileName" className="form-label">
+            Name
+          </label>
+          <input
+            type="text"
+            id="profileName"
+            className="form-control"
+            defaultValue="Rudra Parvate"
+            readOnly
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="profileEmail" className="form-label">
+            Email
+          </label>
+          <input
+            type="email"
+            id="profileEmail"
+            className="form-control"
+            defaultValue="rudra@parvate.com"
+            readOnly
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="profileSection" className="form-label">
+            Section
+          </label>
+          <input
+            type="text"
+            id="profileSection"
+            className="form-control"
+            defaultValue="CS4550 Section 11597"
+            readOnly
+          />
+        </div>
+      </form>
     </div>
   );
 }

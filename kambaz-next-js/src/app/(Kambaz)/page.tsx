@@ -1,7 +1,15 @@
-// src/app/(Kambaz)/page.tsx
-import { redirect } from "next/navigation";
+import NavigationSidebar from "./NavigationSidebar";
 
 export default function Kambaz() {
-  redirect("/Account/Signin");
-  return null;
+  return (
+    <div className="d-flex">
+      <NavigationSidebar />
+      <div className="container mt-4">
+        <h2>Kambaz Dashboard</h2>
+        <p>
+          Welcome to your course hub! Use the sidebar to access labs, dashboard, courses, account, assignments, grades, modules, people, Piazza, Zoom, and quizzes.
+        </p>
+      </div>
+    </div>
+  );
 }

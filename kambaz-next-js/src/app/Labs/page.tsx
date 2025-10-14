@@ -28,6 +28,7 @@ export default function LabsLanding() {
         <ul>
           <li>
             <a
+              id="wd-github"
               href="https://github.com/parvate-r/cs4550"
               target="_blank"
               rel="noreferrer"

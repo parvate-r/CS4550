@@ -1,32 +1,29 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function CourseNavigation({ courseId }: { courseId: string }) {
+  const pathname = usePathname();
+
+  const tabs = [
+    { label: "Dashboard", path: `/Courses/${courseId}` },
+    { label: "Assignments", path: `/Courses/${courseId}/Assignments` },
+    { label: "Modules", path: `/Courses/${courseId}/Modules` },
+    { label: "People", path: `/Courses/${courseId}/People` },
+  ];
+
   return (
-    <div id="wd-course-navigation">
-      <ul>
-        <li>
-          <Link href={`/Kambaz/Courses/${courseId}`}>Home</Link>
-        </li>
-        <li>
-          <Link href={`/Kambaz/Courses/${courseId}/Modules`}>Modules</Link>
-        </li>
-        <li>
-          <Link href={`/Kambaz/Courses/${courseId}/Assignments`}>
-            Assignments
-          </Link>
-        </li>
-        <li>
-          <Link href={`/Kambaz/Courses/${courseId}/Quizzes`}>Quizzes</Link>
-        </li>
-        <li>
-          <Link href={`/Kambaz/Courses/${courseId}/Grades`}>Grades</Link>
-        </li>
-        <li>
-          <Link href={`/Kambaz/Courses/${courseId}/Zoom`}>Zoom</Link>
-        </li>
+    <nav className="course-nav bg-light border-end p-3" style={{ minWidth: 180 }}>
+      <ul className="list-unstyled">
+        {tabs.map(tab => (
+          <li key={tab.path} className={pathname === tab.path ? "fw-bold text-primary" : ""}>
+            <Link href={tab.path} className="nav-link">
+              {tab.label}
+            </Link>
+          </li>
+        ))}
       </ul>
-    </div>
+    </nav>
   );
 }

@@ -1,45 +1,55 @@
 "use client";
+import { useState } from "react";
 
-export default function Modules() {
+export default function CourseModules() {
+  const [expanded, setExpanded] = useState([true, false, false]);
+  const modules = [
+    {
+      title: "Module 1: HTML Basics",
+      lessons: ["Intro to HTML", "Tags & Structure", "Lab: Basic HTML"],
+    },
+    {
+      title: "Module 2: CSS & Layouts",
+      lessons: ["Selectors", "Flexbox", "Grid", "Lab: CSS Styling"],
+    },
+    {
+      title: "Module 3: React Fundamentals",
+      lessons: ["JSX", "Components", "Props & State", "Project: Kambaz UI"],
+    },
+  ];
+
+  const toggleModule = (idx: number) => {
+    setExpanded(expanded =>
+      expanded.map((open, i) => (i === idx ? !open : open))
+    );
+  };
+
   return (
-    <div id="wd-modules">
+    <div className="container mt-4">
       <h2>Modules</h2>
-
-      {/* Buttons at the top */}
-      <div style={{ marginBottom: "1rem" }}>
-        <button>Collapse All</button>
-        <button>View Progress</button>
-        <button>+ Module</button>
-      </div>
-
-      {/* Module 1 */}
-      <div className="wd-module">
-        <h3>Module 1: Introduction to Web Development</h3>
-        <ul>
-          <li>Lesson 1.1 - Course Overview</li>
-          <li>Lesson 1.2 - What is HTML?</li>
-          <li>Lesson 1.3 - Setting up Development Environment</li>
-        </ul>
-      </div>
-
-      {/* Module 2 */}
-      <div className="wd-module">
-        <h3>Module 2: HTML Basics</h3>
-        <ul>
-          <li>Lesson 2.1 - Headings, Paragraphs, and Lists</li>
-          <li>Lesson 2.2 - Links and Images</li>
-          <li>Lesson 2.3 - Forms Overview</li>
-        </ul>
-      </div>
-
-      {/* Module 3 */}
-      <div className="wd-module">
-        <h3>Module 3: CSS Fundamentals</h3>
-        <ul>
-          <li>Lesson 3.1 - Selectors and Properties</li>
-          <li>Lesson 3.2 - Colors, Fonts, and Text Styling</li>
-          <li>Lesson 3.3 - Box Model and Spacing</li>
-        </ul>
+      <div className="accordion" id="modulesAccordion">
+        {modules.map((mod, idx) => (
+          <div className="accordion-item mb-2 border" key={mod.title}>
+            <h4
+              className="accordion-header p-3 bg-light"
+              onClick={() => toggleModule(idx)}
+              style={{ cursor: "pointer", borderLeft: "4px solid #0d6efd" }}
+            >
+              {mod.title}
+            </h4>
+            {expanded[idx] && (
+              <div className="accordion-body bg-white p-3">
+                <ul>
+                  {mod.lessons.map(lesson => (
+                    <li key={lesson} className="mb-1">
+                      {lesson}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -4,18 +4,15 @@ export default function CourseHome({ params }: { params: { id: string } }) {
   const { id } = params;
 
   return (
-    <div id="wd-course-home">
-      <h2>Course Home</h2>
-      <p>Welcome to course {id}. Here you can find modules, assignments, and grades.</p>
-
-      <h3>Course Status</h3>
-      <ul>
-        <li>Published</li>
-        <li>Course Starts: Jan 2025</li>
-        <li>Course Ends: May 2025</li>
-      </ul>
-
+    <div className="d-flex">
       <CourseNavigation courseId={id} />
+      <div className="container mt-4">
+        <h2>Course {id} Dashboard</h2>
+        <p>
+          Welcome to course <strong>{id}</strong>.<br />
+          Use the navigation sidebar to access modules, assignments, grades, people, Piazza, Zoom, and quizzes.
+        </p>
+      </div>
     </div>
   );
 }
