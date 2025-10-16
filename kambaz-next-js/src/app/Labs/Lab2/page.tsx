@@ -1,5 +1,7 @@
 "use client";
 import "./lab2.css";
+import { Alert, Button } from "react-bootstrap";
+
 
 export default function Lab2() {
   return (
@@ -105,6 +107,51 @@ export default function Lab2() {
           </p>
         </div>
       </div>
+
+          {/* Typography & Hover Demo */}
+      <div className="card mb-4">
+        <div className="card-body">
+          <h2 className="card-title mb-3">Typography & Hover Demo</h2>
+          <p className="font-demo">
+            This paragraph uses the <code>.font-demo</code> class to change font, size, and alignment.
+          </p>
+          <p>
+            Hover over this text to see the <code>p:hover</code> style turn it blue.
+          </p>
+        </div>
+      </div>
+
+      {/* Table Demo (Non-Bootstrap) */}
+      <div className="card mb-4">
+        <div className="card-body">
+          <h2 className="card-title mb-3">Custom Table (CSS-only)</h2>
+          <table className="table-demo">
+            <thead>
+              <tr><th>Language</th><th>Creator</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Python</td><td>Guido van Rossum</td></tr>
+              <tr><td>JavaScript</td><td>Brendan Eich</td></tr>
+              <tr><td>Go</td><td>Robert Griesemer</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* React Bootstrap Demo */}
+      <div className="card mb-4">
+        <div className="card-body">
+          <h2 className="card-title mb-3">React Bootstrap Components</h2>
+          <Alert variant="info">
+            This is a <strong>React Bootstrap Alert</strong> example.
+          </Alert>
+          <Button variant="success" className="transition-demo mt-2">
+            React Bootstrap Button
+          </Button>
+        </div>
+      </div>
+
+
     </div>
   );
 }
