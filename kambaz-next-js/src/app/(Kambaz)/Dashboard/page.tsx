@@ -9,23 +9,30 @@ export default function Dashboard() {
     { id: "1357", title: "CS5800 - Algorithms" },
     { id: "4321", title: "CS3500 - Logic & Computation" },
     { id: "2469", title: "CS3200 - Database Systems" },
-    { id: "6789", title: "CS6140 - Machine Learning" }
+    { id: "6789", title: "CS6140 - Machine Learning" },
   ];
 
   return (
-    <div className="container mt-4">
-      <h2>Kambaz Dashboard</h2>
-      <div className="row g-4 mt-2">
-        {courses.map(course => (
-          <div className="col-sm-6 col-md-4 col-lg-3" key={course.id}>
-            <div className="card h-100 border-primary">
-              <div className="card-body d-flex flex-column">
+    <div className="container mt-4 mb-5">
+      <div className="card mb-4 shadow-sm">
+        <div className="card-body">
+          <h1 className="card-title">Kambaz Dashboard</h1>
+          <p className="card-text">
+            Welcome to your Kambaz course dashboard. Browse your enrolled courses below.
+          </p>
+        </div>
+      </div>
+
+      <h2 className="mb-3">Your Courses</h2>
+      <div className="row">
+        {courses.map((course) => (
+          <div key={course.id} className="col-md-6 col-lg-4 mb-4">
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
                 <h5 className="card-title">{course.title}</h5>
-                <Link
-                  href={`/Courses/${course.id}`}
-                  className="btn btn-outline-primary mt-auto"
-                >
-                  Go to Course
+                <p className="card-text text-muted">Course ID: {course.id}</p>
+                <Link href={`/Kambaz/Courses/${course.id}`} className="btn btn-primary">
+                  View Course
                 </Link>
               </div>
             </div>

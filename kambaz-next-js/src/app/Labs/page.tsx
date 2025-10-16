@@ -1,43 +1,56 @@
+"use client";
 import Link from "next/link";
 import "./labs.css";
 
-export default function LabsLanding() {
+export default function Labs() {
   return (
-    <div id="wd-labs">
-      <h1>CS4550 Web Development - Labs</h1>
-      <h2>Rudra Parvate, Section CS4550.11597.202610</h2>
+    <div className="container mt-4 mb-5">
+      <div className="card shadow-sm mb-4">
+        <div className="card-body">
+          <h1 className="card-title">CS4550 Labs - Rudra Parvate</h1>
+          <p className="card-text mb-2">
+            Welcome! This page contains links and navigation for all labs and major project sections.
+          </p>
+          <p className="card-text mb-0">
+            Section 11597 | <a id="wd-github" href="https://github.com/parvate-r/cs4550" target="_blank" rel="noopener">Project Github Repo</a>
+          </p>
+        </div>
+      </div>
 
-      <section>
-        <h3>Lab Assignments</h3>
-        <ul>
-          <li><Link href="/Labs/Lab1">Lab 1: HTML</Link></li>
-          <li><Link href="/Labs/Lab2">Lab 2: CSS</Link></li>
-          <li><Link href="/Labs/Lab3">Lab 3: Bootstrap (coming soon)</Link></li>
-        </ul>
-      </section>
+      <div className="card mb-4">
+        <div className="card-body">
+          <h2 className="card-title">Labs Navigation</h2>
+          <ul className="list-group">
+            <li className="list-group-item">
+              <Link className="text-decoration-none" href="/Labs/Lab1">Lab 1 - HTML Basics</Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="text-decoration-none" href="/Labs/Lab2">Lab 2 - CSS & Bootstrap</Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="text-decoration-none" href="/Labs/Lab3">Lab 3 - Bootstrap Grid System</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-      <section>
-        <h3>Kambaz</h3>
-        <ul>
-          <li><Link href="/Account/Signin">Go to Kambaz Application</Link></li>
-        </ul>
-      </section>
+      <div className="card mb-4">
+        <div className="card-body">
+          <h3 className="card-title mb-2">Major Project Links</h3>
+          <ul className="list-group">
+            <li className="list-group-item">
+              <Link className="text-decoration-none" href="/Kambaz">Kambaz Dashboard</Link>
+            </li>
+            <li className="list-group-item">
+              <Link className="text-decoration-none" href="/Account/Signin">Account / Sign In</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-      <section>
-        <h3>Source Code</h3>
-        <ul>
-          <li>
-            <a
-              id="wd-github"
-              href="https://github.com/parvate-r/cs4550"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub Repository
-            </a>
-          </li>
-        </ul>
-      </section>
+      <footer className="mt-4 text-center">
+        <span className="text-secondary">Made for CS4550, Northeastern University</span>
+      </footer>
     </div>
   );
 }
