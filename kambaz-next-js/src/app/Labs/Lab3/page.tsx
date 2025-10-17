@@ -1,6 +1,7 @@
 "use client";
 import "./lab3.css";
 
+import Link from "next/link";
 import Variables from "./components/Variables";
 import Conditionals from "./components/Conditionals";
 import FunctionsExample from "./components/FunctionsExample";
@@ -97,14 +98,14 @@ export default function Lab3() {
           </p>
           <ul>
             <li>
-              <a href="/Labs/Lab3/add/1/2" className="text-decoration-none">
+              <Link href="/Labs/Lab3/add/1/2" className="text-decoration-none">
                 /Labs/Lab3/add/1/2
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/Labs/Lab3/add/3/4" className="text-decoration-none">
+              <Link href="/Labs/Lab3/add/3/4" className="text-decoration-none">
                 /Labs/Lab3/add/3/4
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
