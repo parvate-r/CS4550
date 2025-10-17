@@ -1,0 +1,115 @@
+/* =========================================================
+   LAB 3 — JavaScript & Data-Driven React Styling
+   Rudra Parvate | CS4550 Web Development
+   ========================================================= */
+
+/* Global Container */
+#wd-lab3 {
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Headers */
+#wd-lab3 h1 {
+  color: #0d6efd;
+  font-weight: 700;
+  border-bottom: 2px solid #0d6efd;
+  padding-bottom: 6px;
+  margin-bottom: 1rem;
+}
+
+#wd-lab3 h2 {
+  color: #212529;
+  font-weight: 600;
+}
+
+/* Bootstrap Card Enhancements */
+#wd-lab3 .card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.75rem;
+  transition: all 0.25s ease-in-out;
+}
+
+#wd-lab3 .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+#wd-lab3 .card-body {
+  background-color: #ffffff;
+}
+
+/* Text and Code Blocks */
+#wd-lab3 p {
+  margin-bottom: 0.75rem;
+}
+
+#wd-lab3 code {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 0.15rem 0.3rem;
+  font-family: "Fira Code", monospace;
+  color: #d63384;
+}
+
+/* Nav Pills (for LocationExample) */
+#wd-location-example .nav-link {
+  color: #0d6efd;
+  border-radius: 0.5rem;
+  margin-right: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+#wd-location-example .nav-link:hover {
+  background-color: #e7f1ff;
+  color: #084298;
+  transform: translateY(-1px);
+}
+
+#wd-location-example .nav-link.active {
+  background-color: #0d6efd;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Cards inside LocationExample */
+#wd-location-example .card {
+  border-left: 4px solid #0d6efd;
+}
+
+/* Table Styling (for data examples) */
+#wd-lab3 table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#wd-lab3 th,
+#wd-lab3 td {
+  border: 1px solid #dee2e6;
+  padding: 8px 10px;
+}
+
+#wd-lab3 th {
+  background-color: #f1f3f5;
+  font-weight: 600;
+}
+
+#wd-lab3 tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Spacing utilities */
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+/* Footer */
+#wd-lab3 footer {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}

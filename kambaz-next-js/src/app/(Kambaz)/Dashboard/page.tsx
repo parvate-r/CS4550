@@ -2,18 +2,10 @@
 import Link from "next/link";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import "./dashboard.css";
+import { courses } from "../data/courses";
+
 
 export default function Dashboard() {
-  const courses = [
-    { id: "1234", title: "CS4550 - Web Development" },
-    { id: "5678", title: "CS5610 - Web Dev & UI" },
-    { id: "2468", title: "CS5004 - Object-Oriented Design" },
-    { id: "1357", title: "CS5800 - Algorithms" },
-    { id: "4321", title: "CS3500 - Logic & Computation" },
-    { id: "2469", title: "CS3200 - Database Systems" },
-    { id: "6789", title: "CS6140 - Machine Learning" },
-  ];
-
   return (
     <div id="wd-dashboard" className="container mt-4 mb-5">
       {/* Header Card */}
