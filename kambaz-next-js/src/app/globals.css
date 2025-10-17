@@ -79,3 +79,24 @@ form label {
 #wd-labs a:hover {
   text-decoration: underline;
 }
+
+.kambaz-column {
+  min-height: 300px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.kambaz-task {
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: grab;
+  transition: background-color 0.2s ease;
+}
+
+.kambaz-task:hover {
+  background-color: #f1f1f1;
+}

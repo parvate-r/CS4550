@@ -1,0 +1,37 @@
+/* kambaz.css */
+
+.kambaz-column {
+  min-height: 320px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.02);
+}
+
+.kambaz-column h4 {
+  font-size: 1.05rem;
+}
+
+.kambaz-task {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #d7d7d7;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: grab;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* tiny hover affordance */
+.kambaz-task:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* responsive tweaks */
+@media (max-width: 767.98px) {
+  .kambaz-column {
+    min-height: 200px;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,9 @@
+[
+  {"_id":"c1","name":"CS4550 React","desc":"Full Stack software developer","image":"/images/reactjs.jpg"},
+  {"_id":"c2","name":"CS1234 Node","desc":"Node basics","image":"/images/stacked.jpg"},
+  {"_id":"c3","name":"CS2222 DB","desc":"Databases","image":"/images/reactjs.jpg"},
+  {"_id":"c4","name":"CS3333 Frontend","desc":"Advanced front-end","image":"/images/stacked.jpg"},
+  {"_id":"c5","name":"CS4444 UX","desc":"UX & Design","image":"/images/reactjs.jpg"},
+  {"_id":"c6","name":"CS5555 DevOps","desc":"DevOps","image":"/images/stacked.jpg"},
+  {"_id":"c7","name":"CS6666 Security","desc":"Security essentials","image":"/images/reactjs.jpg"}
+]
