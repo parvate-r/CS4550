@@ -1,35 +1,54 @@
-/* kambaz.css */
+
+.kambaz-board {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
 
 .kambaz-column {
+  flex: 1 1 280px;
   min-height: 320px;
   background-color: #f8f9fa;
   border-radius: 8px;
   border: 1px solid #e0e0e0;
   box-shadow: 0 0 0 1px rgba(0,0,0,0.02);
+  padding: 1rem;
 }
 
 .kambaz-column h4 {
   font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #212529;
 }
 
 .kambaz-task {
-  background-color: #fff;
-  padding: 10px;
+  background-color: #ffffff;
+  padding: 10px 12px;
   border: 1px solid #d7d7d7;
   border-radius: 6px;
   margin-bottom: 10px;
   cursor: grab;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
 }
 
-/* tiny hover affordance */
 .kambaz-task:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-/* responsive tweaks */
+.kambaz-task:active {
+  cursor: grabbing;
+  background-color: #f1f1f1;
+}
+
 @media (max-width: 767.98px) {
+  .kambaz-board {
+    flex-direction: column;
+  }
+
   .kambaz-column {
     min-height: 200px;
     margin-bottom: 1rem;

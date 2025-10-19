@@ -1,13 +1,24 @@
+
 .account-nav {
+  min-height: 100vh;              
   height: 100%;
-  min-height: 100vh;
+  width: 220px;                   
+  background-color: #f8f9fa;      
+  border-right: 1px solid #dee2e6;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .account-nav .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: #212529;
   font-weight: 500;
+  padding: 0.45rem 0.6rem;
   border-radius: 0.5rem;
-  padding: 0.4rem 0.6rem;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
 }
@@ -24,8 +35,36 @@
   font-size: 1.1rem;
 }
 
+.account-nav .nav-link.active,
+.account-nav .nav-link[aria-current="page"] {
+  background-color: #0d6efd;
+  color: white;
+  font-weight: 600;
+}
+
+.account-nav .nav-link.active svg,
+.account-nav .nav-link[aria-current="page"] svg {
+  color: white;
+}
 @media (max-width: 768px) {
   .account-nav {
     min-height: auto;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem;
+  }
+
+  .account-nav .nav-link {
+    justify-content: center;
+    flex-direction: column;
+    font-size: 0.9rem;
+    padding: 0.25rem;
+  }
+
+  .account-nav .nav-link svg {
+    font-size: 1.2rem;
   }
 }

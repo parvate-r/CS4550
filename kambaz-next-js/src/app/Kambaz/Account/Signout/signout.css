@@ -1,0 +1,31 @@
+
+.signout-container {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.signout-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  text-align: center;
+}
+
+#wd-signout-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.signout-message {
+  color: #495057;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.signout-button {
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+}
