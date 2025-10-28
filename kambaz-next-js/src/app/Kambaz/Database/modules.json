@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "M101",
+    "course": "CS4550",
+    "name": "Introduction to Web Development",
+    "lessons": ["HTML Basics", "CSS Basics", "JavaScript Fundamentals"]
+  },
+  {
+    "_id": "M102",
+    "course": "CS4550",
+    "name": "React Components",
+    "lessons": ["Props and State", "Event Handling", "Lists and Keys"]
+  },
+  {
+    "_id": "M201",
+    "course": "CS5610",
+    "name": "Server-Side Development",
+    "lessons": ["Node.js", "Express", "MongoDB"]
+  }
+]

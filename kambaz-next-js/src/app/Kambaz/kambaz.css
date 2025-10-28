@@ -54,3 +54,19 @@
     margin-bottom: 1rem;
   }
 }
+
+table th {
+  font-weight: 600;
+}
+
+table td {
+  vertical-align: middle;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+h1, h2, h3 {
+  color: #333;
+}

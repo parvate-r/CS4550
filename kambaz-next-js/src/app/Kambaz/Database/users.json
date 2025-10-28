@@ -1,0 +1,5 @@
+[
+  { "_id": "U101", "username": "alice", "fullName": "Alice Johnson", "role": "Student" },
+  { "_id": "U102", "username": "bob", "fullName": "Bob Lee", "role": "Student" },
+  { "_id": "U103", "username": "charlie", "fullName": "Charlie Brown", "role": "Faculty" }
+]

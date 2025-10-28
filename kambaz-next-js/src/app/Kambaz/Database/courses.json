@@ -1,9 +1,72 @@
 [
-  {"_id":"c1","name":"CS4550 React","desc":"Full Stack software developer","image":"/images/reactjs.jpg"},
-  {"_id":"c2","name":"CS1234 Node","desc":"Node basics","image":"/images/stacked.jpg"},
-  {"_id":"c3","name":"CS2222 DB","desc":"Databases","image":"/images/reactjs.jpg"},
-  {"_id":"c4","name":"CS3333 Frontend","desc":"Advanced front-end","image":"/images/stacked.jpg"},
-  {"_id":"c5","name":"CS4444 UX","desc":"UX & Design","image":"/images/reactjs.jpg"},
-  {"_id":"c6","name":"CS5555 DevOps","desc":"DevOps","image":"/images/stacked.jpg"},
-  {"_id":"c7","name":"CS6666 Security","desc":"Security essentials","image":"/images/reactjs.jpg"}
+  {
+    "_id": "CS4550",
+    "name": "CS4550 Web Development",
+    "number": "CS4550",
+    "term": "Fall 2025",
+    "startDate": "2025-09-04",
+    "endDate": "2025-12-15",
+    "image": "/images/reactjs.jpg",
+    "description": "Full stack web development with MERN stack"
+  },
+  {
+    "_id": "CS5610",
+    "name": "CS5610 Web Development",
+    "number": "CS5610",
+    "term": "Spring 2025",
+    "startDate": "2025-01-08",
+    "endDate": "2025-04-20",
+    "image": "/images/nodejs.jpg",
+    "description": "Graduate-level MERN stack course"
+  },
+  {
+    "_id": "CS3200",
+    "name": "CS3200 Database Design",
+    "number": "CS3200",
+    "term": "Fall 2025",
+    "startDate": "2025-09-04",
+    "endDate": "2025-12-15",
+    "image": "/images/database.jpg",
+    "description": "Relational databases, SQL, and normalization"
+  },
+  {
+    "_id": "CS2500",
+    "name": "CS2500 Fundamentals of Computer Science 1",
+    "number": "CS2500",
+    "term": "Fall 2025",
+    "startDate": "2025-09-04",
+    "endDate": "2025-12-15",
+    "image": "/images/java.jpg",
+    "description": "Problem-solving and programming using Java"
+  },
+  {
+    "_id": "CS5001",
+    "name": "CS5001 Intensive Foundations of CS",
+    "number": "CS5001",
+    "term": "Spring 2025",
+    "startDate": "2025-01-08",
+    "endDate": "2025-04-20",
+    "image": "/images/foundations.jpg",
+    "description": "Introductory computer science for graduate students"
+  },
+  {
+    "_id": "CS3700",
+    "name": "CS3700 Networks and Distributed Systems",
+    "number": "CS3700",
+    "term": "Fall 2025",
+    "startDate": "2025-09-04",
+    "endDate": "2025-12-15",
+    "image": "/images/networks.jpg",
+    "description": "Networking fundamentals and distributed system design"
+  },
+  {
+    "_id": "CS5200",
+    "name": "CS5200 Database Management Systems",
+    "number": "CS5200",
+    "term": "Summer 2025",
+    "startDate": "2025-05-06",
+    "endDate": "2025-08-10",
+    "image": "/images/dbms.jpg",
+    "description": "Advanced database design and data management systems"
+  }
 ]

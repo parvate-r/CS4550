@@ -12,7 +12,16 @@ export default function Labs() {
             Welcome! This page contains links and navigation for all labs and major project sections.
           </p>
           <p className="card-text mb-0">
-            Section 11597 | <a id="wd-github" href="https://github.com/parvate-r/cs4550" target="_blank" rel="noopener noreferrer">Project Github Repo</a>
+            Section 11597 |{" "}
+            <a
+              id="wd-github"
+              href="https://github.com/parvate-r/cs4550"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View CS4550 Project GitHub Repository"
+            >
+              Project GitHub Repo
+            </a>
           </p>
         </div>
       </div>
@@ -22,13 +31,19 @@ export default function Labs() {
           <h2 className="card-title">Labs Navigation</h2>
           <ul className="list-group">
             <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab1">Lab 1 – HTML Basics</Link>
+              <Link className="text-decoration-none" href="/Labs/Lab1">
+                Lab 1 – HTML Basics
+              </Link>
             </li>
             <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab2">Lab 2 – CSS & Bootstrap</Link>
+              <Link className="text-decoration-none" href="/Labs/Lab2">
+                Lab 2 – CSS & Bootstrap
+              </Link>
             </li>
             <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab3">Lab 3 – Bootstrap Grid System</Link>
+              <Link className="text-decoration-none" href="/Labs/Lab3">
+                Lab 3 – JavaScript Fundamentals
+              </Link>
             </li>
           </ul>
         </div>
@@ -39,17 +54,23 @@ export default function Labs() {
           <h3 className="card-title mb-2">Major Project Links</h3>
           <ul className="list-group">
             <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Kambaz">Kambaz Dashboard</Link>
+              <Link className="text-decoration-none" href="/Kambaz">
+                Kambaz Dashboard
+              </Link>
             </li>
             <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Account/Signin">Account / Sign In</Link>
+              <Link className="text-decoration-none" href="/Account/Signin">
+                Account / Sign In
+              </Link>
             </li>
           </ul>
         </div>
       </div>
 
       <footer className="mt-4 text-center">
-        <span className="text-secondary">Made for CS4550, Northeastern University</span>
+        <span className="text-secondary">
+          Made for CS4550, Northeastern University
+        </span>
       </footer>
     </div>
   );
