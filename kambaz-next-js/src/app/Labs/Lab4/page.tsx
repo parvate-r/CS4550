@@ -11,7 +11,7 @@ import ObjectState from "./UseState/ObjectState";
 import ArrayState from "./UseState/ArrayState";
 import SharedState from "./UseState/SharedState";
 import FormInputExample from "./FormInputExample";
-import ReduxExamples from "./ReduxExamples/page";
+import ReduxExamples from "./ReduxExamples";
 
 export default function Lab4() {
   const [count, setCount] = useState(0);
