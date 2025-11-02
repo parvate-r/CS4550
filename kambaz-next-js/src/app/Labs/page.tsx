@@ -26,6 +26,7 @@ export default function Labs() {
         </div>
       </div>
 
+      {/* Labs Navigation */}
       <div className="card mb-4">
         <div className="card-body">
           <h2 className="card-title">Labs Navigation</h2>
@@ -45,10 +46,16 @@ export default function Labs() {
                 Lab 3 – JavaScript Fundamentals
               </Link>
             </li>
+            <li className="list-group-item">
+              <Link className="text-decoration-none" href="/Labs/Lab4">
+                Lab 4 – Maintaining State in React Applications
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
 
+      {/* Major Project Links */}
       <div className="card mb-4">
         <div className="card-body">
           <h3 className="card-title mb-2">Major Project Links</h3>
