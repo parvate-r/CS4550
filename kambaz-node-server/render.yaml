@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: kambaz-node-server
+    rootDir: kambaz-node-server
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    env: node
