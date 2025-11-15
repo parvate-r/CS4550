@@ -3,88 +3,37 @@ import Link from "next/link";
 
 export default function LabsTOC() {
   return (
-    <div className="container mt-4 mb-5">
-      {/* Header Card */}
-      <div className="card shadow-sm mb-4">
-        <div className="card-body">
-          <h1 className="card-title">CS4550 Labs - Rudra Parvate</h1>
-          <p className="card-text mb-2">
-            Welcome! This page contains links and navigation for all labs and major project sections.
-          </p>
-          <p className="card-text mb-0">
-            Section 11597 |{" "}
-            <a
-              id="wd-github"
-              href="https://github.com/parvate-r/cs4550"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View CS4550 Project GitHub Repository"
-            >
-              Project GitHub Repo
-            </a>
-          </p>
-        </div>
+    <div className="card mb-4">
+      <div className="card-body">
+        <h2 className="card-title">Labs Navigation</h2>
+        <ul className="list-group">
+          <li className="list-group-item">
+            <Link className="text-decoration-none" href="/Labs/Lab1">
+              Lab 1 – HTML Basics
+            </Link>
+          </li>
+          <li className="list-group-item">
+            <Link className="text-decoration-none" href="/Labs/Lab2">
+              Lab 2 – CSS & Bootstrap
+            </Link>
+          </li>
+          <li className="list-group-item">
+            <Link className="text-decoration-none" href="/Labs/Lab3">
+              Lab 3 – JavaScript Fundamentals
+            </Link>
+          </li>
+          <li className="list-group-item">
+            <Link className="text-decoration-none" href="/Labs/Lab4">
+              Lab 4 – Maintaining State in React Applications
+            </Link>
+          </li>
+          <li className="list-group-item">
+            <Link className="text-decoration-none" href="/Labs/Lab5">
+              Lab 5 – Server Communication (Node + Express)
+            </Link>
+          </li>
+        </ul>
       </div>
-
-      {/* Labs Navigation */}
-      <div className="card mb-4">
-        <div className="card-body">
-          <h2 className="card-title">Labs Navigation</h2>
-          <ul className="list-group">
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab1">
-                Lab 1 - HTML Basics
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab2">
-                Lab 2 - CSS & Bootstrap
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab3">
-                Lab 3 - JavaScript Fundamentals
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab4">
-                Lab 4 - Maintaining State in React Applications
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab5">
-                Lab 5 - Server Communication (Node + Express)
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Major Project Links */}
-      <div className="card mb-4">
-        <div className="card-body">
-          <h3 className="card-title mb-2">Major Project Links</h3>
-          <ul className="list-group">
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Kambaz">
-                Kambaz Dashboard
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Account/Signin">
-                Account / Sign In
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="mt-4 text-center">
-        <span className="text-secondary">
-          Made for CS4550, Northeastern University
-        </span>
-      </footer>
     </div>
   );
 }

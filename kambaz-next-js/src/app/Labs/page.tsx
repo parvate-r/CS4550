@@ -1,67 +1,64 @@
 "use client";
 import Link from "next/link";
+import LabsTOC from "./TOC";
 import "./labs.css";
 
 export default function Labs() {
   return (
     <div className="container mt-4 mb-5">
+
+      {/* Header */}
       <div className="card shadow-sm mb-4">
         <div className="card-body">
           <h1 className="card-title">CS4550 Labs – Rudra Parvate</h1>
-          <p className="card-text mb-2">
-            Welcome! This page contains links and navigation for all labs and major project sections.
-          </p>
-          <p className="card-text mb-0">
-            Section 11597 |{" "}
-            <a
-              id="wd-github"
-              href="https://github.com/parvate-r/cs4550"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View CS4550 Project GitHub Repository"
-            >
-              Project GitHub Repo
-            </a>
-          </p>
-        </div>
-      </div>
 
-      {/* Labs Navigation */}
-      <div className="card mb-4">
-        <div className="card-body">
-          <h2 className="card-title">Labs Navigation</h2>
-          <ul className="list-group">
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab1">
-                Lab 1 – HTML Basics
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab2">
-                Lab 2 – CSS & Bootstrap
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab3">
-                Lab 3 – JavaScript Fundamentals
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab4">
-                Lab 4 – Maintaining State in React Applications
-              </Link>
-            </li>
-            <li className="list-group-item">
-              <Link className="text-decoration-none" href="/Labs/Lab5">
-                Lab 5 – Server Communication (Node + Express)
-              </Link>
+          <p className="card-text mb-1">
+            Section 11597 — Northeastern University
+          </p>
+
+          <p className="card-text mb-3">
+            Welcome! This is the Lab Exercises landing page, including navigation
+            to all labs, project links, and required resources.
+          </p>
+
+          {/* Source Code & API */}
+          <h5>Source Code</h5>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/parvate-r/CS4550"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Repository (Next.js + Node API)
+              </a>
             </li>
           </ul>
+
+          <h5 className="mt-3">Render API Deployment</h5>
+          <ul>
+            <li>
+              <a
+                href="https://kambaz-node-server.onrender.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Express Server on Render
+              </a>
+            </li>
+          </ul>
+
+          <Link href="/Kambaz" className="btn btn-primary mt-2">
+            Go to Kambaz Application
+          </Link>
         </div>
       </div>
 
-      {/* Major Project Links */}
-      <div className="card mb-4">
+      {/* Table of Contents Navigation */}
+      <LabsTOC />
+
+      {/* Project Links */}
+      <div className="card mb-4 mt-3">
         <div className="card-body">
           <h3 className="card-title mb-2">Major Project Links</h3>
           <ul className="list-group">
@@ -79,6 +76,7 @@ export default function Labs() {
         </div>
       </div>
 
+      {/* Footer */}
       <footer className="mt-4 text-center">
         <span className="text-secondary">
           Made for CS4550, Northeastern University
