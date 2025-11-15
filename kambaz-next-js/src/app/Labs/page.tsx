@@ -51,6 +51,11 @@ export default function Labs() {
                 Lab 4 – Maintaining State in React Applications
               </Link>
             </li>
+            <li className="list-group-item">
+              <Link className="text-decoration-none" href="/Labs/Lab5">
+                Lab 5 – Server Communication (Node + Express)
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
