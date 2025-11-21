@@ -1,15 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React from "react";
 import CourseNavigation from "../Navigation";
 
-export default function CourseLayout({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: { id: string };
-}) {
+export default function CourseLayout({ children, params }: any) {
   const { id } = params;
 
   return (
