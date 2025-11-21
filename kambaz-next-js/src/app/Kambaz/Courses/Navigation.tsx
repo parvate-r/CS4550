@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function CourseNavigation({ courseId }: { courseId: string }) {
+export default function CourseNavigation({ id }: { id: string }) {
   const pathname = usePathname();
 
   const navItems = [
@@ -17,8 +17,9 @@ export default function CourseNavigation({ courseId }: { courseId: string }) {
   return (
     <div className="list-group">
       {navItems.map((item) => {
-        const href = `/Kambaz/Courses/${courseId}/${item.path}`;
+        const href = `/Kambaz/Courses/${id}/${item.path}`;
         const active = pathname === href;
+
         return (
           <Link
             key={item.path}
