@@ -11,7 +11,12 @@ import ObjectState from "./UseState/ObjectState";
 import ArrayState from "./UseState/ArrayState";
 import SharedState from "./UseState/SharedState";
 import FormInputExample from "./FormInputExample";
+import TodoList from "./Todo/TodoList";
 import ReduxExamples from "./ReduxExamples";
+import Dashboard from "./Kambaz/Dashboard";
+import CoursesDisplay from "./Kambaz/CoursesDisplay";
+import Modules from "./Kambaz/Modules";
+import Assignments from "./Kambaz/Assignments";
 
 export default function Lab4() {
   const [count, setCount] = useState(0);
@@ -41,11 +46,9 @@ export default function Lab4() {
           <code>useState</code>, and manage global state using <code>Redux Toolkit</code>.
         </p>
 
-        {/* 4.2.1 Handling Events */}
         <section className="mb-4">
           <h3>4.2.1 – Handling User Events</h3>
 
-          {/* 4.2.1.1 Handling Click Events */}
           <div className="mb-3">
             <h5>4.2.1.1 Handling Click Events</h5>
             <button onClick={handleClick} className="btn btn-outline-primary">
@@ -53,7 +56,6 @@ export default function Lab4() {
             </button>
           </div>
 
-          {/* 4.2.1.2 Passing Data When Handling Events */}
           <div className="mb-3">
             <h5>4.2.1.2 Passing Data When Handling Events</h5>
             <button
@@ -64,7 +66,6 @@ export default function Lab4() {
             </button>
           </div>
 
-          {/* 4.2.1.3 Passing Functions as Parameters + 4.2.1.4 The Event Object */}
           <div>
             <h5>4.2.1.3 + 4.2.1.4 – Counter Example with Event Object</h5>
             <p>Count: {count}</p>
@@ -80,7 +81,6 @@ export default function Lab4() {
           </div>
         </section>
 
-        {/* 4.2.2 Managing Component State */}
         <section className="mb-4">
           <h3>4.2.2 – Managing Component State</h3>
           <IntegerState />
@@ -93,10 +93,23 @@ export default function Lab4() {
           <FormInputExample />
         </section>
 
-        {/* 4.3 Managing Application State with Redux */}
+        <section className="mb-4">
+          <h3>4.2.3 – Todo List Using Component State</h3>
+          <p>
+            This section demonstrates rendering todos, creating new todos, deleting todos, selecting
+            a todo, and updating a todo — as required in the rubric.
+          </p>
+          <TodoList />
+        </section>
+
         <section className="mb-4">
           <h3>4.3 – Managing Application State with Redux</h3>
           <ReduxExamples />
+
+          <Dashboard />
+          <CoursesDisplay />
+          <Modules />
+          <Assignments />
         </section>
       </div>
     </Provider>
