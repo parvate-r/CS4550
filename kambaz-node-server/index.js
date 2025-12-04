@@ -8,10 +8,11 @@ import enrollmentsRoutes from "./routes/enrollments.routes.js";
 const app = express();
 app.use(express.json());
 
-app.use("/users", usersRoutes);
-app.use("/courses", coursesRoutes);
-app.use("/modules", modulesRoutes);
-app.use("/enrollments", enrollmentsRoutes);
+app.use("/api/courses", coursesRoutes);
+app.use("/api/modules", modulesRoutes);
+app.use("/api/users", usersRoutes);
+app.use("/api/enrollments", enrollmentsRoutes);
+
 
 app.listen(4000, () => {
   console.log("Server running on http://localhost:4000");
