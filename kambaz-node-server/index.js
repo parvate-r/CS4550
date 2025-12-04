@@ -1,19 +1,18 @@
 import express from "express";
-import Hello from "./Hello.js";
-import Lab5 from "./Lab5/index.js";
-import cors from 'cors';
+import "./connection.js";  // ensures MongoDB connects
+import usersRoutes from "./routes/users.routes.js";
+import coursesRoutes from "./routes/courses.routes.js";
+import modulesRoutes from "./routes/modules.routes.js";
+import enrollmentsRoutes from "./routes/enrollments.routes.js";
 
 const app = express();
-
 app.use(express.json());
-app.use(cors())
 
-// Attach route modules
-Hello(app);
-Lab5(app);
+app.use("/users", usersRoutes);
+app.use("/courses", coursesRoutes);
+app.use("/modules", modulesRoutes);
+app.use("/enrollments", enrollmentsRoutes);
 
-// Start server
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () =>
-  console.log(`Kambaz Node server listening on port ${PORT}`)
-);
+app.listen(4000, () => {
+  console.log("Server running on http://localhost:4000");
+});
