@@ -9,8 +9,33 @@ import enrollmentsRoutes from "./routes/enrollments.routes.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 
+// Allowed origins list + regex for Vercel
+const allowedOrigins = [
+  "http://localhost:3000",
+  /\.vercel\.app$/
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true); // allow no-origin requests
+
+      const isAllowed = allowedOrigins.some((o) =>
+        typeof o === "string" ? o === origin : o.test(origin)
+      );
+
+      if (isAllowed) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS: " + origin));
+      }
+    },
+    credentials: true,
+  })
+);
+
+// Routes
 app.use("/api/courses", coursesRoutes);
 app.use("/api/modules", modulesRoutes);
 app.use("/api/users", usersRoutes);
