@@ -10,6 +10,7 @@ import "./dashboard.css";
 export default function Dashboard() {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [editingCourse, setEditingCourse] = useState<Course | null>(null);
   const [formData, setFormData] = useState<Partial<Course>>({
@@ -29,10 +30,15 @@ export default function Dashboard() {
   const fetchCourses = async () => {
     try {
       setLoading(true);
+      setError(null);
       const data = await coursesApi.getAll();
       setCourses(data);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Failed to fetch courses:", error);
+      const errorMessage = error?.response?.status === 404
+        ? "Backend server not found. Please check your NEXT_PUBLIC_REMOTE_SERVER environment variable."
+        : error?.message || "Failed to load courses. Please check your backend connection.";
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -90,6 +96,32 @@ export default function Dashboard() {
         <NavigationSidebar />
         <div className="wd-main-content-offset container mt-4">
           <p>Loading courses...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="d-flex" id="wd-dashboard">
+        <NavigationSidebar />
+        <div className="wd-main-content-offset container mt-4">
+          <div className="alert alert-danger">
+            <h4>Error Loading Courses</h4>
+            <p>{error}</p>
+            <p className="mb-0">
+              <strong>Debugging tips:</strong>
+              <ul className="mt-2">
+                <li>Check that NEXT_PUBLIC_REMOTE_SERVER is set in Vercel environment variables</li>
+                <li>Verify your backend server is running on Render</li>
+                <li>Check browser console for detailed error messages</li>
+                <li>Ensure CORS is configured correctly on the backend</li>
+              </ul>
+            </p>
+            <Button variant="primary" onClick={fetchCourses} className="mt-3">
+              Retry
+            </Button>
+          </div>
         </div>
       </div>
     );

@@ -13,13 +13,17 @@ app.use(express.json());
 // Allowed origins list + regex for Vercel
 const allowedOrigins = [
   "http://localhost:3000",
-  /\.vercel\.app$/
+  /\.vercel\.app$/,  // Vercel preview and production domains
+  /^https?:\/\/localhost:\d+$/,  // Any localhost port
 ];
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin) return callback(null, true); // allow no-origin requests
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) {
+        return callback(null, true);
+      }
 
       const isAllowed = allowedOrigins.some((o) =>
         typeof o === "string" ? o === origin : o.test(origin)
@@ -28,6 +32,9 @@ app.use(
       if (isAllowed) {
         callback(null, true);
       } else {
+        // Log blocked origins for debugging
+        console.warn("CORS blocked origin:", origin);
+        console.warn("To allow this origin, add it to allowedOrigins in index.js");
         callback(new Error("Not allowed by CORS: " + origin));
       }
     },

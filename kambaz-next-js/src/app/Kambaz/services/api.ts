@@ -18,15 +18,61 @@ const getApiBaseUrl = (): string => {
     // Ignore errors (import.meta won't exist in Next.js)
   }
 
-  return "http://localhost:4000";
+  // Default to localhost for local development
+  const defaultUrl = "http://localhost:4000";
+  
+  // Warn if we're in production and using localhost
+  if (typeof window !== "undefined" && window.location.hostname !== "localhost") {
+    console.warn(
+      "⚠️ NEXT_PUBLIC_REMOTE_SERVER not set! Using localhost:4000. " +
+      "This will not work in production. Set NEXT_PUBLIC_REMOTE_SERVER in Vercel environment variables."
+    );
+  }
+  
+  return defaultUrl;
 };
 
 const API = getApiBaseUrl();
+
+// Log API URL in development (helps with debugging)
+if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {
+  console.log("🔗 API Base URL:", API);
+}
 
 const apiClient = axios.create({
   baseURL: API,
   headers: { "Content-Type": "application/json" },
 });
+
+// Add response interceptor for better error handling
+apiClient.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    // Enhanced error logging
+    if (error.response) {
+      // Server responded with error status
+      console.error("API Error:", {
+        status: error.response.status,
+        statusText: error.response.statusText,
+        url: error.config?.url,
+        baseURL: error.config?.baseURL,
+        data: error.response.data,
+      });
+    } else if (error.request) {
+      // Request made but no response received
+      console.error("API Network Error:", {
+        message: error.message,
+        url: error.config?.url,
+        baseURL: error.config?.baseURL,
+        hint: "Check if the backend server is running and CORS is configured correctly.",
+      });
+    } else {
+      // Something else happened
+      console.error("API Error:", error.message);
+    }
+    return Promise.reject(error);
+  }
+);
 
 // ----- Types -----
 
