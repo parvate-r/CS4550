@@ -33,11 +33,21 @@ export default function Dashboard() {
       setError(null);
       const data = await coursesApi.getAll();
       setCourses(data);
-    } catch (error: any) {
+    } catch (error) {
       console.error("Failed to fetch courses:", error);
-      const errorMessage = error?.response?.status === 404
-        ? "Backend server not found. Please check your NEXT_PUBLIC_REMOTE_SERVER environment variable."
-        : error?.message || "Failed to load courses. Please check your backend connection.";
+      let errorMessage = "Failed to load courses. Please check your backend connection.";
+      
+      if (error && typeof error === "object" && "response" in error) {
+        const axiosError = error as { response?: { status?: number }; message?: string };
+        if (axiosError.response?.status === 404) {
+          errorMessage = "Backend server not found. Please check your NEXT_PUBLIC_REMOTE_SERVER environment variable.";
+        } else if (axiosError.message) {
+          errorMessage = axiosError.message;
+        }
+      } else if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+      
       setError(errorMessage);
     } finally {
       setLoading(false);
