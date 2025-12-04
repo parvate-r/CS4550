@@ -1,13 +1,27 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
-import * as db from "../Database";
+import { coursesApi, Course } from "../services/api";
 
 export default function CourseBreadcrumbs() {
   const { id } = useParams();
   const pathname = usePathname();
-  const course = db.courses.find((c) => c._id === id);
+  const [course, setCourse] = useState<Course | null>(null);
+
+  useEffect(() => {
+    const fetchCourse = async () => {
+      if (id && typeof id === "string") {
+        try {
+          const data = await coursesApi.getById(id);
+          setCourse(data);
+        } catch (error) {
+          console.error("Failed to fetch course for breadcrumbs:", error);
+        }
+      }
+    };
+    fetchCourse();
+  }, [id]);
 
   if (!course) return null;
 

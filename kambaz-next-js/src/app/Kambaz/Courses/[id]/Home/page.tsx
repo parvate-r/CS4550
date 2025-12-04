@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { courses } from "../../../Database";
+import { coursesApi, Course } from "../../../services/api";
 
 export default function CourseHomePage({
   params,
@@ -11,8 +11,32 @@ export default function CourseHomePage({
   params: { id: string };
 }) {
   const { id } = params;
+  const [course, setCourse] = useState<Course | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const course = courses.find((c: any) => c._id === id);
+  useEffect(() => {
+    const fetchCourse = async () => {
+      try {
+        setLoading(true);
+        const data = await coursesApi.getById(id);
+        setCourse(data);
+      } catch (error) {
+        console.error("Failed to fetch course:", error);
+        setCourse(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCourse();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="container mt-4">
+        <p>Loading course...</p>
+      </div>
+    );
+  }
 
   if (!course) {
     return (
