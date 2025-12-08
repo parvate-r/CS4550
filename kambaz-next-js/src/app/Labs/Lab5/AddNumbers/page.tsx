@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-const SERVER = "http://localhost:4000";
+const SERVER =
+  process.env.NEXT_PUBLIC_API_BASE || "http://localhost:4000";
+
 
 export default function AddNumbers() {
   const [a, setA] = useState("0");
