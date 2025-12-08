@@ -99,3 +99,4 @@ NEXT_PUBLIC_REMOTE_SERVER=https://your-app-name.onrender.com
 
 Then restart your Next.js dev server.
 
+

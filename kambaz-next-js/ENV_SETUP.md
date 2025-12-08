@@ -38,3 +38,4 @@ If no environment variable is set, the app defaults to `http://localhost:4000`.
 - For production deployments, set the environment variable in your hosting platform (Vercel, Render, etc.)
 - The API service automatically detects and uses the appropriate environment variable
 
+

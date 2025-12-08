@@ -156,3 +156,4 @@ All data now comes from the backend API.
 - User feedback provided via alerts for errors
 - Loading states improve UX during API calls
 
+
